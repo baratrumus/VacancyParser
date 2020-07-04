@@ -10,12 +10,24 @@ services:
 before_install:
   - psql -c 'create database tracker;' -U postgres
 
-#before_script:
+before_script:
+#  - psql -c 'create database carsDB;' -U postgres
+
+install:
+  mvn install -P travis -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+script:
+  mvn test -P travis,liquibase,!main -B
+
 
 
 # используем режим обычного пользователя для сборки проекта.
 sudo: false
 
+# после выполнения сборки запустить скрипт, который будет собирать статистику по JaCoCo
+# Здесь используется сторонни сервис https://codecov.io/
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 
 
 # Отправлять уведомление на почту youremail@smtp.ru(Изменить на свою) если сборка упала

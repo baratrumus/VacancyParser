@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/baratrumus/VacancyParcer.svg?branch=master)](https://travis-ci.org/baratrumus/VacancyParcer)
+[![Build Status](https://travis-ci.org/baratrumus/VacancyParser.svg?branch=master)](https://travis-ci.org/baratrumus/VacancyParser)
+[![codecov](https://codecov.io/gh/baratrumus/VacancyParser/branch/master/graph/badge.svg)](https://codecov.io/gh/baratrumus/VacancyParser)
 
 ## Application Vacancy parser 
 
